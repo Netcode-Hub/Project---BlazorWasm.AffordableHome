@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.7" PrivateAssets="all" />
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="22.1.36" />
+    <PackageReference Include="Syncfusion.Blazor.DropDowns" Version="22.1.36" />
+    <PackageReference Include="Syncfusion.Blazor.Buttons" Version="22.1.36" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\BlazorWasm.AffordableHomes.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Services\HouseServices\" />
+    <None Remove="Services\ModeServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\HouseServices\" />
+    <Folder Include="Services\ModeServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="git-configure --global --add safe.directory 'C:/Working Project/BlazorWasm.AffordableHomes'" />
+  </ItemGroup>
+</Project>
